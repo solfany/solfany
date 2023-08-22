@@ -19,7 +19,6 @@
 
 ## 공부 중입니다 🎆🎆
 
-현재는 ADsP 공부중입니다:)
 
 <img src = "https://img.shields.io/badge/-JavaScript-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-React-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-Python-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-Java-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src="https://img.shields.io/badge/-Spring-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/>
 <img src = "https://img.shields.io/badge/-Network-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> 
