@@ -15,9 +15,9 @@
   ## PS
 - 블로그 : <https://solfany.github.io> ✨
 - 이메일 : <solfany1999@gmail.com>
+- 포트폴리오 : <https://solfany.github.io/portfolio/>
 
 ## 공부 중입니다 🎆🎆
-- 3차 풀스택 프로젝트 
 
 
 <img src = "https://img.shields.io/badge/-JavaScript-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-React-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-Python-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src = "https://img.shields.io/badge/-Java-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/> <img src="https://img.shields.io/badge/-Spring-black" style="height : auto; margin-left : 2px; margin-right : 2px;"/>
