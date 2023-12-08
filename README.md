@@ -1,6 +1,4 @@
 
-## 나에 대해서 소개합니다🌱
-
 <a href="https://solfany.github.io/">
     <img src = "https://img.shields.io/badge/MY%20BLOG-yellow?&style=flat&logo=github&logoColor=black" style="height : auto; margin-right : 2px;"/>
 </a>
