@@ -1,12 +1,6 @@
+<!-- 무지개 야간 그래프 -->
+![](./profile-3d-contrib/profile-night-rainbow.svg)
 
+<hr/>
 
-
-<!-- ![solfany's GitHub stats](https://github-readme-stats.vercel.app/api?username=solfany&show_icons=true&theme=radical) -->
-
-<!-- ![image](https://media.giphy.com/media/fb4haewhv8ttpwpfMw/giphy.gif) -->
-
-
-## 잔디 키우기 
-
-  ![](./profile-3d-contrib/profile-gitblock.svg)
-    
+![GitHub Stats](https://github-readme-stats.vercel.app/api?include_all_commits=true&username=solfany&show_icons=true&theme=vision-friendly-dark)
