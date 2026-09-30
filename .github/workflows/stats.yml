@@ -1,7 +1,7 @@
-name: Grow the activity garden
+name: Refresh player stats and activity
 on:
   schedule:
-    - cron: '0 18 * * *'
+    - cron: '17 19 * * *'
   workflow_dispatch:
 permissions:
   contents: read
@@ -9,23 +9,24 @@ concurrency:
   group: profile-generated-assets
   cancel-in-progress: false
 jobs:
-  build:
+  refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v7
-      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+      - name: Generate public stats and recent activity
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          USERNAME: ${{ github.repository_owner }}
-      - name: Save the garden
+          PROFILE_USER: ${{ github.repository_owner }}
+        run: python3 scripts/update-profile.py
+      - name: Save updated cards
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- profile-3d-contrib/
+          git add -- README.md assets/stats-light.svg assets/stats-dark.svg assets/stats-light-mobile.svg assets/stats-dark-mobile.svg
           if ! git diff --cached --quiet; then
-            git commit -m "chore: grow the activity garden"
+            git commit -m "chore: refresh player stats and activity"
             git push
           fi

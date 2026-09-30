@@ -1,0 +1,34 @@
+name: Feed the little snake
+on:
+  schedule:
+    - cron: '37 19 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: profile-generated-assets
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ github.token }}
+          outputs: |
+            assets/snake-light.svg?color_snake=#92527a&color_dots=#f2edf5,#e3d5ed,#c8afdf,#a982c2,#795396
+            assets/snake-dark.svg?color_snake=#edabc9&color_dots=#2e2a41,#514262,#75608b,#a982c2,#dfacd5
+      - name: Save the pet calendar
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/snake-light.svg assets/snake-dark.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: feed the little snake"
+            git push
+          fi
