@@ -1,0 +1,45 @@
+name: Update commit arcade
+
+on:
+  schedule:
+    # Every day at 03:00 KST.
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/profile-arcade.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-arcade
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate light and dark Pac-Man graphs
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          games: pacman
+      - name: Save graphs
+        run: |
+          mkdir -p assets
+          cp dist/pacman-contribution-graph.svg assets/
+          cp dist/pacman-contribution-graph-dark.svg assets/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/pacman-contribution-graph.svg assets/pacman-contribution-graph-dark.svg
+          if git diff --cached --quiet; then
+            echo "Contribution graphs are already up to date."
+            exit 0
+          fi
+          git commit -m "chore: refresh commit arcade"
+          git push
